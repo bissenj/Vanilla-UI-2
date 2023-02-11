@@ -1,0 +1,33 @@
+/* parent selector ish */
+.slide-viewer:has(.s1-card) {
+    margin: 20px 0px;
+}
+
+/* Custom Render Function Styles */
+.s1-card {
+    min-height: 200px;
+    border: 1px solid red;
+    cursor: pointer;
+
+    /* Add some color */
+    background-color: orangered;
+    display: grid;
+    place-content: center;
+    color: white;
+}
+
+.s1-card:nth-child(even) {
+    background-color: #3498DB;
+}
+
+.small-slides .s1-card {
+    width: 100%;
+    justify-self: center;
+}
+
+.small-slides .slide-group {
+    grid-auto-columns: 45%;  
+}
+
+
+

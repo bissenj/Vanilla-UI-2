@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Vanilla UI Components">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+  <title>Vanilla UI | Home</title>   
+  <link rel='stylesheet' href='css/main.css' />  
+  <link rel='stylesheet' href='js/components/basicTimeline/basicTimeline.css' />
+  <link rel='stylesheet' href='js/components/horizontalSlider/horizontalSlider.css' />
+  <link rel='stylesheet' href='js/components/controlGrid/control-grid.css' />  
+
+  <!-- For Examples -->
+  <link rel='stylesheet' href='css/slider-1-example.css' />  
+
+</head>
+
+<body> 
+    <!-- Summary -->
+    <main>
+        <h1>Vanilla UI</h1>
+
+        <img src="https://picsum.photos/seed/picsum/1000/300"></img>
+
+        <!-- Slide show -->
+        <div>
+            <!-- Title -->
+            <h2>Horizontal Slider</h2>
+
+            <!-- Summary -->
+            <p>
+                The horizontal slider takes in an array of data objects along with a render function and can be used to create unique slideshows.
+            </p>
+
+            <!-- Slideshow 1 -> unsplash -->
+            <h3>Basic slideshow of images from unsplash</h3>
+            <h4>Example 1:  Default horizontal slider<h4>
+            <div id='slide1Container' class='horizontalSlider'></div>
+
+            <h4>Example 2:  Horizontal Slider with wrapping<h4>
+            <div id='slide2Container' class='horizontalSlider'></div>
+
+            <h4>Example 3:  Horizontal Slider with multiple slides on a screen<h4>
+            <div id='slide3Container' class='horizontalSlider small-slides'></div>
+
+            <!-- Slideshow 2 -> testimonials -->
+            <h3>Testimonials</h3>
+
+            <!-- Example gallery -->
+            <div>
+            </div>
+
+        </div>
+        
+
+        <!-- Timeline Example -->
+        <div>
+            <!-- Title -->
+            <h2>Timeline</h2>
+
+            <!-- Summary -->
+            <p>
+                The timeline component takes in an array of data objects and displays them on a timeline.
+            </p>
+
+            <!-- Timeline 1  -->
+            <h3>Sample timeline</h3>
+
+            <!-- Example gallery -->
+            <div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Component Descriptions -->
+        <!-- Thumbnails to example list -->
+
+    <!-- Examples in a page context -->
+        <!-- Slideshow example 1:  multiple small slides which wrap - unsplash -->
+        <!-- Slideshow example 2:  full size slides - unsplash -->
+        <!-- Slideshow example 3:  mixed slides - unsplash & youtube -->
+        <!-- Slideshow example 4:  history of nintendo like career slides -->
+
+</body>
+
+<script src="~/../js/components/controlGrid/controlGrid.js"></script>
+<script src="~/../js/components/basicTimeline/basicTimeline.js"></script>
+<script src="~/../js/components/horizontalSlider/horizontalSlider.js"></script>
+<script>
+
+    // EXAMPLE 1
+    const slider1Data = [
+        { id: 0, image: 'https://unsplash.com/photos/nKC772R_qog', alt: 'Kitten photo by Edgar'},
+        { id: 1, image: 'https://unsplash.com/photos/qQWV91TTBrE', alt: 'Polar bear photo by Hans-Jurgen Mager'},
+        { id: 2, image: 'https://unsplash.com/photos/bKhETeDV1WM', alt: 'Squirrel photo by Geran de Klerk'},
+        { id: 3, image: 'https://unsplash.com/photos/vUNQaTtZeOo', alt: 'Bird photo by Vincent van Zalinge'},
+        { id: 4, image: 'https://unsplash.com/photos/djswadct1ps', alt: 'Butterfly photo by David Clode'},
+    ];
+
+    function renderSlide1(item) {
+        let html = '';
+        // html += `<div><img src="https://picsum.photos/seed/picsum/999/250"></img></div>`;
+        html += `<div class='s1-card'><span>This is slide:  ${item.id}</span></div>`;
+        return html;
+    }
+
+    // Slider 1 Example - defaults
+    const slider1El = document.querySelector('#slide1Container');
+    const slider1 = new HorizontalSlider(slider1El, slider1Data, renderSlide1);            
+
+    // Slider 2 Example - wrapping 
+    const slider2El = document.querySelector('#slide2Container');
+    const slider2 = new HorizontalSlider(slider2El, slider1Data, renderSlide1, true);            
+
+    // Slider 3 Example - small slides
+    const slider3El = document.querySelector('#slide3Container');
+    const slider3 = new HorizontalSlider(slider3El, slider1Data, renderSlide1, false, false, 100);            
+
+
+</script>
+
+</html>

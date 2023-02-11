@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+a {
+    all: unset;
+}
+
+body {
+    font-size: 22px;     
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.4s;
+}
+
+
+/* Page fade in effect on load */
+main {
+    min-height: 100vh;
+    animation: fade-in 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    transition: opacity 0.4s;
+}
+@keyframes fade-in {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+
